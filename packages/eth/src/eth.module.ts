@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders, Type } from '@angular/core';
 import { Web3Provider } from '../../core/src';
 import { ETH } from './token';
-const Eth = require('web3-eth');
+import { default as Eth} from 'web3-eth';
 
 @NgModule({
 
