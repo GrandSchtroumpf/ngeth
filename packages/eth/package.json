@@ -1,0 +1,24 @@
+{
+    "name": "@ngeth/eth",
+    "version": "0.0.0-PLACEHOLDER",
+    "license": "MIT",
+    "author": "GrandSchtroumpf",
+    "keywords": [
+        "Ethereum",
+        "Angular",
+        "web3",
+        "NGRX"
+    ],
+    "private": false,
+    "peerDependencies": {
+        "@angular/core": "NG_VERSION",
+        "@ngeth/core": "0.0.0-PLACEHOLDER",
+        "@ngrx/effects": "NGRX_VERSION",
+        "@ngrx/entity": "NGRX_VERSION",
+        "@ngrx/store": "NGRX_VERSION",
+        "@ngrx/store-devtools": "NGRX_VERSION",
+        "rxjs": "RXJS_VERSION",
+        "web3": "WEB3_VERSION"
+    },
+    "sideEffects": false
+}

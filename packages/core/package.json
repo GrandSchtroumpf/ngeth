@@ -1,0 +1,19 @@
+{
+    "name": "@ngeth/core",
+    "version": "0.0.0-PLACEHOLDER",
+    "license": "MIT",
+    "author": "GrandSchtroumpf",
+    "keywords": [
+        "Ethereum",
+        "Angular",
+        "web3",
+        "provider",
+        "NGRX"
+    ],
+    "peerDependencies": {
+        "@angular/core": "NG_VERSION",
+        "rxjs": "RXJS_VERSION"
+    },
+    "sideEffects": false
+}
+  
