@@ -1,6 +1,6 @@
 {
     "name": "@ngeth/core",
-    "version": "0.0.1-1",
+    "version": "0.0.1-0",
     "license": "MIT",
     "author": "GrandSchtroumpf",
     "keywords": [
@@ -10,6 +10,7 @@
         "provider",
         "NGRX"
     ],
+    "private": false,
     "peerDependencies": {
         "@angular/core": "NG_VERSION",
         "rxjs": "RXJS_VERSION",
