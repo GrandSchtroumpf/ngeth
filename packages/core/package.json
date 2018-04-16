@@ -1,6 +1,6 @@
 {
     "name": "@ngeth/core",
-    "version": "0.0.1-3",
+    "version": "0.0.1-4",
     "license": "MIT",
     "author": "GrandSchtroumpf",
     "keywords": [
@@ -10,11 +10,14 @@
         "provider",
         "NGRX"
     ],
+    "scripts": {
+        "ng-packagr": "ng-packagr"
+    },
     "private": false,
-    "peerDependencies": {
-        "@angular/core": "NG_VERSION",
-        "rxjs": "RXJS_VERSION",
-        "web3-provider-engine": "WEB3_ENGINE_VERSION"
+    "dependencies": {
+        "@angular/core": "6.0.0-rc.1",
+        "rxjs": "6.0.0-beta.4",
+        "web3-provider-engine": "^14.0.4"
     },
     "sideEffects": false
 }
