@@ -1,7 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 // Web3
 import { ETH } from '../token';
-import { Eth } from 'web3/types';
 
 // RXJS
 import { Observable, bindNodeCallback, of } from 'rxjs';
@@ -10,14 +9,14 @@ import { map, tap, catchError } from 'rxjs/operators';
 @Injectable()
 export class EthAccounts {
 
-    constructor(@Inject(ETH) private eth: Eth) { }
+    constructor(@Inject(ETH) private eth) { }
 
     get defaultAccount(): string { return this.eth.defaultAccount; }
     set defaultAccount(account: string) { this.eth.defaultAccount = account; }
 
     /** Returns all accounts available */
     public getAccounts(): Observable<string[]> {
-        return bindNodeCallback(this.eth.getAccounts)();
+        return bindNodeCallback<string[]>(this.eth.getAccounts)();
     }
 
     /** Get the current account */

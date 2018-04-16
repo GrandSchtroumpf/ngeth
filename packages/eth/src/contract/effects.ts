@@ -39,4 +39,5 @@ export class ContractEffect {
         }),
         catchError((err: any) => of(new actions.ContractError(err)))
     );
+
 }

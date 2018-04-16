@@ -27,7 +27,7 @@ export interface NgEventEmitter<T extends object> extends EventEmitter {
 }
 
 /** Method format of the contract */
-export type NgMethod<T> = (args: any[] | any, tx?: Tx) => Observable<T>;
+export type NgMethod<Input, Output> = (args?: Input, tx?: Tx) => Observable<Output>;
 /** Event format of the contract */
 export type NgEvent<T extends object> = (options?: {
   filter?: object
@@ -38,17 +38,16 @@ export type NgEvent<T extends object> = (options?: {
 /** A template of Contract for the NgContract */
 export interface INgContract {
   methods: {
-    [fnName: string]: NgMethod<any>
+    [fnName: string]: NgMethod<any, any>
   }
-  events: {
+  events?: {
     [evName: string]: NgEvent<any>
     allEvents: NgEvent<any>
   }
 }
 
 /** A Web3 contract with observable methods */
-export interface NgContract<Contract extends INgContract> {
-  name: string,
+export abstract class NgContract<Contract extends INgContract> {
   options: {
     address: string
     jsonInterface: ABIDefinition[]
@@ -56,14 +55,17 @@ export interface NgContract<Contract extends INgContract> {
     from: string
     gasPrice: string
     gas: number
-  }
-  methods: Contract['methods']
-  deploy(options: {
-    data: string
+  };
+  methods: Contract['methods'];
+
+  deploy: (options: {
+    data: string,
     arguments: any[]
-  }): TransactionObject<NgContract<Contract>>
-  events: Contract['events']
-  getPastEvents(
+  }) => TransactionObject<NgContract<Contract>>;
+
+  events: Contract['events'];
+
+  getPastEvents: (
     event: string,
     options?: {
       filter?: object,
@@ -72,8 +74,8 @@ export interface NgContract<Contract extends INgContract> {
       topics?: string[]
     },
     cb?: Callback<NgEventLog<any>[]>
-  ): Promise<NgEventLog<any>[]>,
-  setProvider(provider: IProvider): void
+  ) => Promise<NgEventLog<any>[]>;
+  setProvider: (provider: IProvider) => void;
 }
 
 export interface NgMethodPayload {

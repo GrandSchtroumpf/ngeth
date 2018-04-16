@@ -28,4 +28,5 @@ export class AccountsEffects {
         ofType(SELECT_ACCOUNT),
         map((action: SelectAccount) => this.account.defaultAccount = action.payload)
     );
+
 }

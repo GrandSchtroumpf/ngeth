@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
-import { default as Web3 } from 'web3';
-import { Web3Provider } from './../../packages/core/src/provider';
+import * as Web3 from 'web3';
 
-@Injectable()
-export class NgProvider implements Web3Provider {
+// NGETH
+import { Provider, ProviderModel } from './../../packages/core/src/decorator';
 
-    public provider = new Web3.providers.HttpProvider('');
-}
+@Provider({
+    isCustom: true,
+    rpcUrl: 'https://ropsten.infura.io/Ge8pLCXZNKUB86c7miUf'
+})
+export class NgProvider extends ProviderModel {}

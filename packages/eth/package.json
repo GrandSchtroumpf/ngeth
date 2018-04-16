@@ -6,8 +6,7 @@
     "keywords": [
         "Ethereum",
         "Angular",
-        "web3",
-        "NGRX"
+        "web3"
     ],
     "private": false,
     "peerDependencies": {

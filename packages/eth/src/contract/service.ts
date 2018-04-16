@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { ETH } from '../token';
-import { Eth } from 'web3/types';
+// import { Eth } from 'web3/types';
 import { decodeOutPutStruct } from './utils/struct-decoder';
 
 // Models
@@ -28,7 +28,7 @@ export class EthContract {
         event: string[];
     } = { call: [], send: [], event: [] };
     
-    constructor(@Inject(ETH) private eth: Eth) {}
+    constructor(@Inject(ETH) private eth) {}
 
     /**
      * Creates a new contract instance with all its methods and events defined in its json interface object.

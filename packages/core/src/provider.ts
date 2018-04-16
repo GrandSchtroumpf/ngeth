@@ -1,6 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Provider } from 'web3/types';
+import { WebsocketProvider, IpcProvider, HttpProvider } from 'web3/types';
 
 export interface Web3Provider {
-    provider: Provider;
+    provider: WebsocketProvider | IpcProvider | HttpProvider;
+}
+
+export interface ProviderEngine {
+    isCustom: boolean;
+    rpcUrl: string;
+    default?;
+    hookedWallet?;
+    data?;
+    debug?;
 }

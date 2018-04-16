@@ -1,5 +1,5 @@
 {
-    "name": "@ngeth/core",
+    "name": "@ngeth/wallet",
     "version": "0.0.0-PLACEHOLDER",
     "license": "MIT",
     "author": "GrandSchtroumpf",
@@ -7,14 +7,16 @@
         "Ethereum",
         "Angular",
         "web3",
-        "provider",
-        "NGRX"
+        "wallet"
     ],
+    "private": false,
     "peerDependencies": {
         "@angular/core": "NG_VERSION",
+        "@ngeth/core": "0.0.0-PLACEHOLDER",
         "rxjs": "RXJS_VERSION",
-        "web3-provider-engine": "WEB3_ENGINE_VERSION"
+        "web3": "WEB3_VERSION",
+        "bip39": "BIP39_VERSION",
+        "hdkey": "HDKEY_VERSION"
     },
     "sideEffects": false
 }
-  
