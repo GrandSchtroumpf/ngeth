@@ -1,6 +1,6 @@
 {
     "name": "@ngeth/wallet",
-    "version": "0.0.1-2",
+    "version": "0.0.1-3",
     "license": "MIT",
     "author": "GrandSchtroumpf",
     "keywords": [
@@ -9,6 +9,7 @@
         "web3",
         "wallet"
     ],
+    "private": false,
     "peerDependencies": {
         "@angular/core": "NG_VERSION",
         "@ngeth/core": "0.0.0-PLACEHOLDER",
