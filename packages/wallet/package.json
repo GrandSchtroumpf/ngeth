@@ -1,6 +1,6 @@
 {
     "name": "@ngeth/wallet",
-    "version": "0.0.0-PLACEHOLDER",
+    "version": "0.0.1-0",
     "license": "MIT",
     "author": "GrandSchtroumpf",
     "keywords": [
@@ -13,10 +13,11 @@
     "peerDependencies": {
         "@angular/core": "NG_VERSION",
         "@ngeth/core": "0.0.0-PLACEHOLDER",
-        "rxjs": "RXJS_VERSION",
-        "web3": "WEB3_VERSION",
+        "@ngeth/eth": "0.0.0-PLACEHOLDER",
         "bip39": "BIP39_VERSION",
-        "hdkey": "HDKEY_VERSION"
+        "hdkey": "HDKEY_VERSION",
+        "rxjs": "RXJS_VERSION",
+        "web3": "WEB3_VERSION"
     },
     "sideEffects": false
 }
