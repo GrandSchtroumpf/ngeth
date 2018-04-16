@@ -9,7 +9,6 @@
         "web3",
         "wallet"
     ],
-    "private": false,
     "peerDependencies": {
         "@angular/core": "NG_VERSION",
         "@ngeth/core": "0.0.0-PLACEHOLDER",

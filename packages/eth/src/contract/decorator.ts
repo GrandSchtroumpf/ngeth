@@ -29,6 +29,7 @@ export interface Constructor<T = {}> {
     new(...args:any[]): T;
 }
 
+
 /**
  * Contract Decorator
  * @param options 
@@ -92,7 +93,7 @@ export function Contract<T extends INgContract>(options?: ContractMetadata) {
     /**
      * FACTORY
      */
-    return function<TBase extends Constructor>(Base: TBase) {
+    return function<TBase extends Constructor<NgContract<T>>>(Base: TBase): Constructor<NgContract<T>> {
 
         // The instance of the class
         @MixinInjectable(Inject(ETH))

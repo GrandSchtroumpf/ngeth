@@ -24,6 +24,7 @@ export class ProviderModel {
     provider: Engine;
 }
 
+
 /**
  * Decorator
  * @param options 
@@ -67,7 +68,7 @@ export function Provider(options: ProviderEngine) {
     /**
      * Factory
      */
-    return function<TBase extends Constructor>(Base: TBase) {
+    return function<TBase extends Constructor>(Base: TBase): TBase {
 
         
         @Injectable()

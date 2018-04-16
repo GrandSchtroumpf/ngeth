@@ -8,7 +8,12 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "packagr:core": "ng-packagr -p packages/core/package.json",
+    "packagr:eth": "ng-packagr -p packages/eth/package.json",
+    "packagr:wallet": "ng-packagr -p packages/wallet/package.json",
+    "publish": "lerna publish",
+    "bootstrap": "lerna bootstrap"
   },
   "private": true,
   "dependencies": {
@@ -54,7 +59,8 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "ng-packagr": "^2.4.1",
+    "lerna": "^2.10.1",
+    "ng-packagr": "^2.4.2",
     "protractor": "~5.1.2",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",

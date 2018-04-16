@@ -1,7 +1,6 @@
 import { NgModule, ModuleWithProviders, Type, APP_INITIALIZER, Inject } from '@angular/core';
 import { Web3Provider } from '../../core/src';
 import { ETH, PROVIDER } from './token';
-import { EthContract } from './contract';
 import { EthAccounts } from './accounts';
 
 const Eth = require('web3-eth');
@@ -20,9 +19,8 @@ export class EthModule {
         return {
             ngModule: EthModule,
             providers: [
-                EthContract,
                 EthAccounts,
-                // Provider,                
+                // Provider,
                 {
                     provide: PROVIDER,
                     useClass: Provider

@@ -14,7 +14,7 @@ export class WalletProvider {
     ) {
         this.provider;
     }
-
+    
     // DO SOMETHING WITH PROVIDER
     
 }
