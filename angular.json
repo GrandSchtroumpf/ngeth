@@ -2,9 +2,237 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "provider": {
+      "root": "libs/provider",
+      "sourceRoot": "libs/provider/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/provider/src/test.ts",
+            "tsConfig": "libs/provider/tsconfig.spec.json",
+            "karmaConfig": "libs/provider/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/provider/tsconfig.lib.json",
+              "libs/provider/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "contract": {
+      "root": "libs/contract",
+      "sourceRoot": "libs/contract/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/contract/src/test.ts",
+            "tsConfig": "libs/contract/tsconfig.spec.json",
+            "karmaConfig": "libs/contract/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/contract/tsconfig.lib.json",
+              "libs/contract/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "utils": {
+      "root": "libs/utils",
+      "sourceRoot": "libs/utils/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/utils/src/test.ts",
+            "tsConfig": "libs/utils/tsconfig.spec.json",
+            "karmaConfig": "libs/utils/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/utils/tsconfig.lib.json",
+              "libs/utils/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "wallet": {
+      "root": "libs/wallet",
+      "sourceRoot": "libs/wallet/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/wallet/src/test.ts",
+            "tsConfig": "libs/wallet/tsconfig.spec.json",
+            "karmaConfig": "libs/wallet/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/wallet/tsconfig.lib.json",
+              "libs/wallet/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "demos-contract": {
+      "root": "apps/demos/contract/",
+      "sourceRoot": "apps/demos/contract/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/demos/contract",
+            "index": "apps/demos/contract/src/index.html",
+            "main": "apps/demos/contract/src/main.ts",
+            "polyfills": "apps/demos/contract/src/polyfills.ts",
+            "tsConfig": "apps/demos/contract/tsconfig.app.json",
+            "assets": [
+              "apps/demos/contract/src/favicon.ico",
+              "apps/demos/contract/src/assets"
+            ],
+            "styles": [
+              "apps/demos/contract/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/demos/contract/src/environments/environment.ts",
+                  "with": "apps/demos/contract/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "demos-contract:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "demos-contract:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "demos-contract:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/demos/contract/src/test.ts",
+            "polyfills": "apps/demos/contract/src/polyfills.ts",
+            "tsConfig": "apps/demos/contract/tsconfig.spec.json",
+            "karmaConfig": "apps/demos/contract/karma.conf.js",
+            "styles": [
+              "apps/demos/contract/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "apps/demos/contract/src/favicon.ico",
+              "apps/demos/contract/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/demos/contract/tsconfig.app.json",
+              "apps/demos/contract/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "demos-contract-e2e": {
+      "root": "apps/demos/contract-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/demos/contract-e2e/protractor.conf.js",
+            "devServerTarget": "demos-contract:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/demos/contract-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "typescriptMismatch": false,
     "defaultCollection": "@nrwl/schematics"
-  }
+  },
+  "defaultProject": "provider"
 }

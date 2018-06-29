@@ -1,0 +1,18 @@
+{
+  "$schema": "../../node_modules/ng-packagr/package.schema.json",
+  "name": "@ngeth/contract",
+  "version": "0.1.0",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "src/index.ts"
+    },
+    "dest": "../../@ngeth/contract"
+  },
+  "peerDependencies": {
+    "@angular/core": "^6.0.0",
+    "rxjs": "^6.0.0",
+    "@ngeth/utils": "0.0.0",
+    "@ngeth/provider": "0.0.0",
+    "bn.js": "^4.11.8"
+  }
+}

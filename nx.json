@@ -1,5 +1,23 @@
 {
   "npmScope": "ngeth",
   "projects": {
+    "provider": {
+      "tags": []
+    },
+    "contract": {
+      "tags": []
+    },
+    "utils": {
+      "tags": []
+    },
+    "wallet": {
+      "tags": []
+    },
+    "demos-contract": {
+      "tags": []
+    },
+    "demos-contract-e2e": {
+      "tags": []
+    }
   }
 }

@@ -1,0 +1,188 @@
+[
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "triggerIndexedEventString",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "triggerIndexedEventUintString",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "triggerOnlyStaticStructEvent",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "triggerNormalStructEvent",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "triggerIndexedEventUint",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "triggerSeveralEvent",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "triggerNormalAndOnlyStatictStructEvent",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "triggerNonIndexedEvent",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "triggerMaxLimitIndexedEvent",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "numEvent", "type": "uint256" },
+      { "indexed": false, "name": "action", "type": "string" }
+    ],
+    "name": "NonIndexedEvent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "numEvent", "type": "uint256" },
+      { "indexed": false, "name": "action", "type": "string" }
+    ],
+    "name": "IndexedEventUint",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "numEvent", "type": "uint256" },
+      { "indexed": true, "name": "action", "type": "string" }
+    ],
+    "name": "IndexedEventString",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "numEvent", "type": "uint256" },
+      { "indexed": true, "name": "action", "type": "string" }
+    ],
+    "name": "IndexedEventUintString",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "numEvent", "type": "uint256" },
+      { "indexed": true, "name": "action", "type": "string" },
+      { "indexed": true, "name": "anAddress", "type": "address" }
+    ],
+    "name": "MaxLimitIndexedEvent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          { "name": "nom", "type": "string" },
+          { "name": "contractAddress", "type": "address" },
+          { "name": "num", "type": "uint256" }
+        ],
+        "indexed": true,
+        "name": "aNormalStruct",
+        "type": "tuple"
+      }
+    ],
+    "name": "NormalStructEvent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          { "name": "contractAddress", "type": "address" },
+          { "name": "num", "type": "uint256" }
+        ],
+        "indexed": true,
+        "name": "anOnlyStaticStruct",
+        "type": "tuple"
+      }
+    ],
+    "name": "OnlyStaticStructEvent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          { "name": "nom", "type": "string" },
+          { "name": "contractAddress", "type": "address" },
+          { "name": "num", "type": "uint256" }
+        ],
+        "indexed": false,
+        "name": "aNormalStruct",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          { "name": "contractAddress", "type": "address" },
+          { "name": "num", "type": "uint256" }
+        ],
+        "indexed": false,
+        "name": "anOnlyStaticStruct",
+        "type": "tuple"
+      }
+    ],
+    "name": "NormalAndOnlyStatictStructEvent",
+    "type": "event"
+  }
+]

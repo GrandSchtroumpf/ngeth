@@ -1,0 +1,28 @@
+{
+  "$schema": "../../node_modules/ng-packagr/package.schema.json",
+  "name": "@ngeth/wallet",
+  "version": "0.1.0",
+  "ngPackage": {
+    "whitelistedNonPeerDependencies": [
+      "secp256k1",
+      "uuid",
+      "scrypt.js"
+    ],
+    "lib": {
+      "entryFile": "src/index.ts"
+    },
+    "dest": "../../@ngeth/wallet"
+  },
+  "peerDependencies": {
+    "@angular/core": "^6.0.0",
+    "rxjs": "^6.0.0",
+    "@ngeth/utils": "0.0.0",
+    "@ngeth/provider": "0.0.0",
+    "crypto-browserify": "^3.12.0"
+  },
+  "dependencies": {
+    "secp256k1": "^3.5.0",
+    "uuid": "^3.3.0",
+    "scrypt.js": "^0.2.0"
+  }
+}

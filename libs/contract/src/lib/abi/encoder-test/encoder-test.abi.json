@@ -1,0 +1,447 @@
+[
+  {
+    "constant": true,
+    "inputs": [{ "name": "arr", "type": "string[3]" }],
+    "name": "getFixedStringArray",
+    "outputs": [{ "name": "", "type": "string[3]" }],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "staticBytes", "type": "bytes3" }],
+    "name": "getStaticBytes",
+    "outputs": [{ "name": "", "type": "bytes3" }],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [
+          { "name": "isTrue", "type": "bool" },
+          {
+            "components": [
+              { "name": "num", "type": "int256" },
+              { "name": "isTrue", "type": "bool" },
+              { "name": "to", "type": "address" }
+            ],
+            "name": "staticTuple",
+            "type": "tuple[]"
+          }
+        ],
+        "name": "staticTuple",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "getStaticTupleArrayInsideTupleArray",
+    "outputs": [
+      {
+        "components": [
+          { "name": "isTrue", "type": "bool" },
+          {
+            "components": [
+              { "name": "num", "type": "int256" },
+              { "name": "isTrue", "type": "bool" },
+              { "name": "to", "type": "address" }
+            ],
+            "name": "staticTuple",
+            "type": "tuple[]"
+          }
+        ],
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [
+          { "name": "isTrue", "type": "bool" },
+          {
+            "components": [
+              { "name": "num", "type": "int256" },
+              { "name": "str", "type": "string" },
+              { "name": "dynamicBytes", "type": "bytes" }
+            ],
+            "name": "dynamicTuple",
+            "type": "tuple[]"
+          }
+        ],
+        "name": "dynamicTuple",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "getDynamicTupleArrayInsideTupleArray",
+    "outputs": [
+      {
+        "components": [
+          { "name": "isTrue", "type": "bool" },
+          {
+            "components": [
+              { "name": "num", "type": "int256" },
+              { "name": "str", "type": "string" },
+              { "name": "dynamicBytes", "type": "bytes" }
+            ],
+            "name": "dynamicTuple",
+            "type": "tuple[]"
+          }
+        ],
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [
+          { "name": "num", "type": "int256" },
+          { "name": "isTrue", "type": "bool" },
+          { "name": "to", "type": "address" }
+        ],
+        "name": "arr",
+        "type": "tuple[3]"
+      }
+    ],
+    "name": "getFixedStaticTupleArray",
+    "outputs": [
+      {
+        "components": [
+          { "name": "num", "type": "int256" },
+          { "name": "isTrue", "type": "bool" },
+          { "name": "to", "type": "address" }
+        ],
+        "name": "",
+        "type": "tuple[3]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [
+          { "name": "num", "type": "int256" },
+          { "name": "isTrue", "type": "bool" },
+          { "name": "to", "type": "address" }
+        ],
+        "name": "arr",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "getUnfixedStaticTupleArray",
+    "outputs": [
+      {
+        "components": [
+          { "name": "num", "type": "int256" },
+          { "name": "isTrue", "type": "bool" },
+          { "name": "to", "type": "address" }
+        ],
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "isTrue", "type": "bool" }],
+    "name": "getBool",
+    "outputs": [{ "name": "isFalse", "type": "bool" }],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "dynamicBytes", "type": "bytes" }],
+    "name": "getDynamicBytes",
+    "outputs": [{ "name": "", "type": "bytes" }],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [
+          { "name": "isTrue", "type": "bool" },
+          {
+            "components": [
+              { "name": "num", "type": "int256" },
+              { "name": "isTrue", "type": "bool" },
+              { "name": "to", "type": "address" }
+            ],
+            "name": "staticTuple",
+            "type": "tuple[]"
+          }
+        ],
+        "name": "staticTuple",
+        "type": "tuple"
+      }
+    ],
+    "name": "getStaticTupleArrayInsideTuple",
+    "outputs": [
+      {
+        "components": [
+          { "name": "isTrue", "type": "bool" },
+          {
+            "components": [
+              { "name": "num", "type": "int256" },
+              { "name": "isTrue", "type": "bool" },
+              { "name": "to", "type": "address" }
+            ],
+            "name": "staticTuple",
+            "type": "tuple[]"
+          }
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [
+          { "name": "isTrue", "type": "bool" },
+          {
+            "components": [
+              { "name": "num", "type": "int256" },
+              { "name": "str", "type": "string" },
+              { "name": "dynamicBytes", "type": "bytes" }
+            ],
+            "name": "dynamicTuple",
+            "type": "tuple[]"
+          }
+        ],
+        "name": "dynamicTuple",
+        "type": "tuple"
+      }
+    ],
+    "name": "getDynamicTupleArrayInsideTuple",
+    "outputs": [
+      {
+        "components": [
+          { "name": "isTrue", "type": "bool" },
+          {
+            "components": [
+              { "name": "num", "type": "int256" },
+              { "name": "str", "type": "string" },
+              { "name": "dynamicBytes", "type": "bytes" }
+            ],
+            "name": "dynamicTuple",
+            "type": "tuple[]"
+          }
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "str", "type": "string" }],
+    "name": "getString",
+    "outputs": [{ "name": "", "type": "string" }],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [
+          { "name": "num", "type": "int256" },
+          { "name": "str", "type": "string" },
+          { "name": "dynamicBytes", "type": "bytes" }
+        ],
+        "name": "arr",
+        "type": "tuple[3]"
+      }
+    ],
+    "name": "getFixedDynamicTupleArray",
+    "outputs": [
+      {
+        "components": [
+          { "name": "num", "type": "int256" },
+          { "name": "str", "type": "string" },
+          { "name": "dynamicBytes", "type": "bytes" }
+        ],
+        "name": "",
+        "type": "tuple[3]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "arr", "type": "uint256[]" }],
+    "name": "getUnfixedUintArray",
+    "outputs": [{ "name": "", "type": "uint256[]" }],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "num", "type": "uint256" }],
+    "name": "getUint",
+    "outputs": [{ "name": "", "type": "uint256" }],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "to", "type": "address" }],
+    "name": "getAddress",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [
+          { "name": "num", "type": "int256" },
+          { "name": "str", "type": "string" },
+          { "name": "dynamicBytes", "type": "bytes" }
+        ],
+        "name": "dynamicTuple",
+        "type": "tuple"
+      }
+    ],
+    "name": "getDynamicTuple",
+    "outputs": [
+      {
+        "components": [
+          { "name": "num", "type": "int256" },
+          { "name": "str", "type": "string" },
+          { "name": "dynamicBytes", "type": "bytes" }
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "num", "type": "int256" }],
+    "name": "getInt",
+    "outputs": [{ "name": "", "type": "int256" }],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [
+          { "name": "num", "type": "int256" },
+          { "name": "str", "type": "string" },
+          { "name": "dynamicBytes", "type": "bytes" }
+        ],
+        "name": "arr",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "getUnfixedDynamicTupleArray",
+    "outputs": [
+      {
+        "components": [
+          { "name": "num", "type": "int256" },
+          { "name": "str", "type": "string" },
+          { "name": "dynamicBytes", "type": "bytes" }
+        ],
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "arr", "type": "string[]" }],
+    "name": "getUnfixedStringArray",
+    "outputs": [{ "name": "", "type": "string[]" }],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "arr", "type": "uint256[3]" }],
+    "name": "getFixedUintArray",
+    "outputs": [{ "name": "", "type": "uint256[3]" }],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "components": [
+          { "name": "num", "type": "int256" },
+          { "name": "isTrue", "type": "bool" },
+          { "name": "to", "type": "address" }
+        ],
+        "name": "staticTuple",
+        "type": "tuple"
+      }
+    ],
+    "name": "getStaticTuple",
+    "outputs": [
+      {
+        "components": [
+          { "name": "num", "type": "int256" },
+          { "name": "isTrue", "type": "bool" },
+          { "name": "to", "type": "address" }
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  }
+]

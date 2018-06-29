@@ -1,0 +1,22 @@
+{
+  "$schema": "../../node_modules/ng-packagr/package.schema.json",
+  "name": "@ngeth/provider",
+  "version": "0.1.0",
+  "ngPackage": {
+    "whitelistedNonPeerDependencies": ["websocket"],
+    "lib": {
+      "entryFile": "src/index.ts",
+      "@ngeth/utils": "@ngeth/utils"
+    },
+    "dest": "../../@ngeth/provider"
+  },
+  "peerDependencies": {
+    "@angular/core": "6.0.0",
+    "@angular/common": "6.0.0",
+    "@ngeth/utils": "0.0.0",
+    "rxjs": "6.0.0"
+  },
+  "dependencies": {
+    "websocket": "^1.0.26"
+  }
+}

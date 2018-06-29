@@ -1,0 +1,23 @@
+{
+  "$schema": "../../node_modules/ng-packagr/package.schema.json",
+  "name": "@ngeth/utils",
+  "version": "0.1.0",
+  "peerDependencies": {
+    "@angular/core": "6.0.0",
+    "bn.js": "^4.11.8",
+    "utf8": "^3.0.0"
+  },
+  "main": "bundles/ngeth-utils.umd.js",
+  "module": "fesm5/ngeth-utils.js",
+  "es2015": "fesm2015/ngeth-utils.js",
+  "esm5": "esm5/ngeth-utils.js",
+  "esm2015": "esm2015/ngeth-utils.js",
+  "fesm5": "fesm5/ngeth-utils.js",
+  "fesm2015": "fesm2015/ngeth-utils.js",
+  "typings": "ngeth-utils.d.ts",
+  "metadata": "ngeth-utils.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

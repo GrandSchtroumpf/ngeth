@@ -1,0 +1,25 @@
+{
+  "$schema": "../../node_modules/ng-packagr/package.schema.json",
+  "name": "@ngeth/provider",
+  "version": "0.1.0",
+  "peerDependencies": {
+    "@angular/core": "6.0.0",
+    "@angular/common": "6.0.0",
+    "@ngeth/utils": "0.0.0",
+    "rxjs": "6.0.0"
+  },
+  "dependencies": {
+    "websocket": "^1.0.26",
+    "tslib": "^1.9.0"
+  },
+  "main": "bundles/ngeth-provider.umd.js",
+  "module": "fesm5/ngeth-provider.js",
+  "es2015": "fesm2015/ngeth-provider.js",
+  "esm5": "esm5/ngeth-provider.js",
+  "esm2015": "esm2015/ngeth-provider.js",
+  "fesm5": "fesm5/ngeth-provider.js",
+  "fesm2015": "fesm2015/ngeth-provider.js",
+  "typings": "ngeth-provider.d.ts",
+  "metadata": "ngeth-provider.metadata.json",
+  "sideEffects": false
+}
