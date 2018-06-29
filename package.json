@@ -31,7 +31,8 @@
     "build:libs:provider": "ng-packagr -p libs/provider/package.json",
     "build:libs:contract": "ng-packagr -p libs/contract/package.json",
     "build:libs:wallet": "ng-packagr -p libs/wallet/package.json",
-    "lerna": "lerna"
+    "lerna": "lerna",
+    "publish": "lerna publish --skip-git --npm-tag=latest"
   },
   "private": true,
   "dependencies": {
