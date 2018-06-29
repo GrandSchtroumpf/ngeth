@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/@ngeth
 
 # dependencies
 /node_modules
