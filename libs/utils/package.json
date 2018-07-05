@@ -2,15 +2,18 @@
   "$schema": "../../node_modules/ng-packagr/package.schema.json",
   "name": "@ngeth/utils",
   "version": "0.1.0",
-  "peerDependencies": {
-    "@angular/core": "6.0.0",
-    "bn.js": "^4.11.8",
-    "utf8": "^3.0.0"
-  },
   "ngPackage": {
     "lib": {
       "entryFile": "src/index.ts"
     },
-    "dest": "../../@ngeth/utils"
+    "dest": "../../@ngeth/utils",
+    "whitelistedNonPeerDependencies": ["bn.js", "utf8"]
+  },
+  "peerDependencies": {
+    "@angular/core": "6.0.0"
+  },
+  "dependencies": {
+    "bn.js": "^4.11.8",
+    "utf8": "^3.0.0"
   }
 }

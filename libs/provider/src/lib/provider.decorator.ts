@@ -16,7 +16,6 @@ export function Provider(options: {
 
   return function(Base: Type<MainProvider>) {
 
-    @Injectable({ providedIn: ProvidersModule })
     class DecoratedProvider extends MainProvider {
       public static Auth = options.auth || Account;
       public sendAsync: <T>(payload: RPCReq) => Observable<RPCRes<T>>;

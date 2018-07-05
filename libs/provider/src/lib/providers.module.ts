@@ -10,6 +10,12 @@ import { MainProvider } from './provider';
 
 export const AUTH = new InjectionToken<any>('auth');
 
+export function setProviderId(provider: MainProvider) {
+  return  function() {
+    provider.fetchId().then(id => provider.id = id);
+  }
+}
+
 // @dynamic
 @NgModule({
   imports: [HttpClientModule]
@@ -19,12 +25,11 @@ export class ProvidersModule {
     return {
       ngModule: ProvidersModule,
       providers: [
+        Provider,
         { provide: MainProvider, useExisting: Provider },
         {
           provide: APP_INITIALIZER,
-          useFactory: (provider: MainProvider) => {
-            return  () => provider.fetchId().then(id => provider.id = id);
-          },
+          useFactory: setProviderId,
           multi: true,
           deps: [MainProvider]
         },

@@ -14,10 +14,10 @@
     "dest": "../../@ngeth/wallet"
   },
   "peerDependencies": {
+    "@ngeth/provider": "0.0.0",
+    "@ngeth/utils": "0.0.0",
     "@angular/core": "^6.0.0",
     "rxjs": "^6.0.0",
-    "@ngeth/utils": "0.0.0",
-    "@ngeth/provider": "0.0.0",
     "crypto-browserify": "^3.12.0"
   },
   "dependencies": {

@@ -32,7 +32,7 @@
     "build:libs:contract": "ng-packagr -p libs/contract/package.json",
     "build:libs:wallet": "ng-packagr -p libs/wallet/package.json",
     "lerna": "lerna",
-    "publish": "lerna publish --skip-git --npm-tag=latest"
+    "publish": "lerna publish --skip-git"
   },
   "private": true,
   "dependencies": {
@@ -44,8 +44,10 @@
     "@angular/platform-browser": "6.0.0",
     "@angular/platform-browser-dynamic": "6.0.0",
     "@angular/router": "6.0.0",
-    "@ngeth/provider": "./@ngeth/provider",
-    "@ngeth/utils": "./@ngeth/utils",
+    "@ngeth/contract": "0.1.0",
+    "@ngeth/provider": "0.1.0",
+    "@ngeth/utils": "0.1.0",
+    "@ngeth/wallet": "0.1.0",
     "@ngrx/effects": "6.0.0-beta.1",
     "@ngrx/router-store": "6.0.0-beta.1",
     "@ngrx/store": "6.0.0-beta.1",

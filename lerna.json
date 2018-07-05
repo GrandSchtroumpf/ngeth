@@ -1,7 +1,10 @@
 {
   "lerna": "2.11.0",
   "packages": [
-    "@ngeth/*"
+    "@ngeth/contract",
+    "@ngeth/provider",
+    "@ngeth/utils",
+    "@ngeth/wallet"
   ],
   "private": false,
   "npmClient": "yarn",

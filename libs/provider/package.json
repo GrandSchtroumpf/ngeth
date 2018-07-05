@@ -11,10 +11,10 @@
     "dest": "../../@ngeth/provider"
   },
   "peerDependencies": {
-    "@angular/core": "6.0.0",
-    "@angular/common": "6.0.0",
-    "@ngeth/utils": "0.0.0",
-    "rxjs": "6.0.0"
+    "@ngeth/utils": "^0.0.0",
+    "@angular/core": "^6.0.0",
+    "@angular/common": "^6.0.0",
+    "rxjs": "^6.0.0"
   },
   "dependencies": {
     "websocket": "^1.0.26"
