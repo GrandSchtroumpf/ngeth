@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/package.schema.json",
-  "name": "@ngeth/wallet",
+  "name": "@ngeth/auth",
   "version": "0.1.0",
   "ngPackage": {
     "whitelistedNonPeerDependencies": [
@@ -11,7 +11,7 @@
     "lib": {
       "entryFile": "src/index.ts"
     },
-    "dest": "../../@ngeth/wallet"
+    "dest": "../../@ngeth/auth"
   },
   "peerDependencies": {
     "@ngeth/provider": "0.0.0",

@@ -1,18 +1,18 @@
 import { Inject, Injectable } from '@angular/core';
+import { ContractModule, AUTH } from './contract.module';
+import { Provider } from '@ngeth/provider';
+import { Auth } from '@ngeth/auth';
 import { BlockTag, TxLogs, ITxObject, TxObject, hexToNumber, hexToNumberString } from '@ngeth/utils';
-import { ProvidersModule, AUTH } from '@ngeth/provider/src/lib/providers.module';
-import { Auth } from '@ngeth/provider/src/lib/auth';
-import { MainProvider } from '@ngeth/provider/src/lib/main-provider';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-@Injectable({ providedIn : ProvidersModule })
+@Injectable({ providedIn : ContractModule })
 export class ContractProvider {
   private currentTx = new BehaviorSubject<Partial<ITxObject>>(null);
   public tx$ = this.currentTx.asObservable();
   public id: number;
 
-  constructor(@Inject(AUTH) private auth: Auth, private provider: MainProvider) {
+  constructor(@Inject(AUTH) private auth: Auth, private provider: Provider) {
     this.auth.account$
         .subscribe(from => this.defaultTx = { ...this.defaultTx, from });
     this.id = this.provider.id;

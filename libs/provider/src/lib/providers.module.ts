@@ -1,4 +1,3 @@
-import { Account } from './subproviders/account';
 import {
   NgModule,
   ModuleWithProviders,
@@ -10,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { Provider } from './provider';
 
-export const AUTH = new InjectionToken<any>('auth');
 export const URL = new InjectionToken<string>('url');
 
 export function initProvider(provider: Provider, url: string) {
@@ -24,7 +22,7 @@ export function initProvider(provider: Provider, url: string) {
   imports: [HttpClientModule]
 })
 export class ProvidersModule {
-  static init(url: string, Auth?: Type<any>): ModuleWithProviders {
+  static init(url: string): ModuleWithProviders {
     return {
       ngModule: ProvidersModule,
       providers: [
@@ -36,26 +34,7 @@ export class ProvidersModule {
           multi: true,
           deps: [Provider, URL]
         },
-        { provide: AUTH, useClass: Auth || Account },
       ]
     };
   };
-  /*
-  static forRoot(Provider: typeof MainProvider): ModuleWithProviders {
-    return {
-      ngModule: ProvidersModule,
-      providers: [
-        Provider,
-        { provide: MainProvider, useExisting: Provider },
-        {
-          provide: APP_INITIALIZER,
-          useFactory: setProviderId,
-          multi: true,
-          deps: [MainProvider]
-        },
-        { provide: AUTH, useClass: Provider.Auth },
-      ]
-    };
-  }
-  */
 }

@@ -1,5 +1,5 @@
-import { Account, Eth } from '@ngeth/provider';
-import { Wallet } from '@ngeth/wallet';
+import { Eth } from '@ngeth/provider';
+import { AuthWallet } from '@ngeth/auth';
 import { Component, OnInit } from '@angular/core';
 import { EncoderTestContract, TestEventContract } from '@ngeth/contract';
 const bytecode = require('./test-event/bytecode.json');
@@ -14,19 +14,21 @@ export class AppComponent implements OnInit {
   title = 'app';
 
   constructor(
-    public eth: Eth,
-    public account: Account,
-    public wallet: Wallet,
-    public encoderTest: EncoderTestContract,
-    public testEvent: TestEventContract
+    // private eth: Eth,
+    // private account: Account,
+    private wallet: AuthWallet,
+    // private encoderTest: EncoderTestContract,
+    private testEvent: TestEventContract
   ) {}
 
   public deploy() {
+    /*
     this.account.getAccounts().pipe(
       map(accounts => accounts[0]),
       tap(account => this.account.defaultAccount = account),
       switchMap(account => this.testEvent.deploy(bytecode.object))
     ).subscribe(tx => console.log('tx deploy', tx));
+    */
   }
 
   ngOnInit() {
@@ -39,7 +41,6 @@ export class AppComponent implements OnInit {
     this.wallet.save(account, pwd);
     this.wallet.getAccounts().subscribe(console.log);
     //// EVENTS
-    /*
     this.testEvent.events.IndexedEventString()
         .subscribe((event) => console.log('IndexedEventString', event));
     this.testEvent.events.IndexedEventUint()
@@ -56,8 +57,6 @@ export class AppComponent implements OnInit {
         .subscribe((event) => console.log('NormalStructEvent', event));
     this.testEvent.events.OnlyStaticStructEvent()
         .subscribe((event) => console.log('OnlyStaticStructEvent', event));
-    */
-
     //// CALLS
  /*
     this.encoderTest.calls.getAddress('0xbEbDCB7685ab170E24215B45c81d9FFE00BBa54c')

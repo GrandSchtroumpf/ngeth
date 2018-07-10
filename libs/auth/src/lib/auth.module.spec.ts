@@ -1,16 +1,16 @@
 import { async, TestBed } from '@angular/core/testing';
-import { WalletModule } from '@ngeth/wallet/src/lib/wallet.module';
+import { AuthModule } from './auth.module';
 
 describe('WalletModule', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        imports: [WalletModule]
+        imports: [AuthModule]
       }).compileComponents();
     })
   );
 
   it('should create', () => {
-    expect(WalletModule).toBeDefined();
+    expect(AuthModule).toBeDefined();
   });
 });

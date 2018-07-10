@@ -1,5 +1,5 @@
 import { ABIDefinition, toChecksumAddress, ContractModel, ITxObject } from '@ngeth/utils';
-import { ContractProvider } from '@ngeth/provider';
+import { ContractProvider } from './contract.provider';
 import { ABIEncoder, ABIDecoder } from './abi';
 
 import { Observable, forkJoin } from 'rxjs';

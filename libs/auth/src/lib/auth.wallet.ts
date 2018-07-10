@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { ProvidersModule, MainProvider, Auth } from '@ngeth/provider';
+import { Provider } from '@ngeth/provider';
 import { TxObject, toChecksumAddress, checkAddressChecksum } from '@ngeth/utils';
 
+import { Auth } from './auth';
 import { Accounts, EncryptOptions, Keystore, EthAccount } from './account';
 import { Signer } from './signature/signer';
 
@@ -12,15 +13,15 @@ export interface KeystoreMap {
   [address: string]: Keystore;
 }
 
-@Injectable({ providedIn: ProvidersModule})
-export class Wallet implements Auth {
+@Injectable({ providedIn: 'root'})
+export class AuthWallet implements Auth {
   private localKeystore = new BehaviorSubject<KeystoreMap>(null);
   private currentAccount = new BehaviorSubject<string>(null);
   public keystores$ = this.localKeystore.asObservable();
   public account$ = this.currentAccount.asObservable();
 
   constructor(
-    private provider: MainProvider,
+    private provider: Provider,
     private signer: Signer,
     private accounts: Accounts
   ) {

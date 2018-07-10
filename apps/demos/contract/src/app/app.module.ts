@@ -1,3 +1,4 @@
+import { AuthWallet, AuthModule } from '@ngeth/auth';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -5,8 +6,7 @@ import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
 import { ProvidersModule } from '@ngeth/provider';
 import { ContractModule } from '@ngeth/contract';
-import { WalletModule } from '@ngeth/wallet';
-import { AppProvider } from './provider';
+// import { AppProvider } from './provider';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,8 +14,8 @@ import { AppProvider } from './provider';
     BrowserModule,
     // ProvidersModule.forRoot(AppProvider),
     ProvidersModule.init('ws://localhost:7586'),
-    ContractModule,
-    WalletModule,
+    ContractModule.Auth(AuthWallet),
+    AuthModule,
     NxModule.forRoot()
   ],
   providers: [],

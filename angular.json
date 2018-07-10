@@ -87,26 +87,26 @@
         }
       }
     },
-    "wallet": {
-      "root": "libs/wallet",
-      "sourceRoot": "libs/wallet/src",
+    "auth": {
+      "root": "libs/auth",
+      "sourceRoot": "libs/auth/src",
       "projectType": "library",
       "prefix": "lib",
       "architect": {
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "libs/wallet/src/test.ts",
-            "tsConfig": "libs/wallet/tsconfig.spec.json",
-            "karmaConfig": "libs/wallet/karma.conf.js"
+            "main": "libs/auth/src/test.ts",
+            "tsConfig": "libs/auth/tsconfig.spec.json",
+            "karmaConfig": "libs/auth/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/wallet/tsconfig.lib.json",
-              "libs/wallet/tsconfig.spec.json"
+              "libs/auth/tsconfig.lib.json",
+              "libs/auth/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

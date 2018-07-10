@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { WalletModule } from '../wallet.module';
+import { AuthModule } from '../auth.module';
 import * as assert from 'assert';
 import { Buffer } from 'buffer';
 
@@ -10,7 +10,7 @@ import { Buffer } from 'buffer';
  * @param data - will be converted to buffer
  * @returns  - returns buffer of encoded data
  **/
-@Injectable({ providedIn: WalletModule })
+@Injectable({ providedIn: AuthModule })
 export class RLP {
   public encode(input: Buffer | string | number | Array<any>) {
     if (input instanceof Array) {

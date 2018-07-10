@@ -10,7 +10,7 @@
     "utils": {
       "tags": []
     },
-    "wallet": {
+    "auth": {
       "tags": []
     },
     "demos-contract": {

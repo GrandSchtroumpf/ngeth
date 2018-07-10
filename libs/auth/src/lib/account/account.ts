@@ -4,7 +4,7 @@
  */
 
 import { Injectable } from '@angular/core';
-import { WalletModule } from '../wallet.module';
+import { AuthModule } from '../auth.module';
 
 import { v4 } from 'uuid';
 import { toChecksumAddress, keccak256 } from '@ngeth/utils';
@@ -19,7 +19,7 @@ export interface EthAccount {
 }
 
 
-@Injectable({providedIn: WalletModule})
+@Injectable({providedIn: AuthModule})
 export class Accounts {
 
   constructor() {}

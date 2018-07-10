@@ -1,3 +1,3 @@
 import { NgModule } from '@angular/core';
 @NgModule()
-export class WalletModule {}
+export class AuthModule {}

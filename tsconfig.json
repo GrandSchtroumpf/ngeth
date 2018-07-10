@@ -22,17 +22,14 @@
       "@ngeth/provider": [
         "libs/provider/src/index.ts"
       ],
-      "@ngeth/eth": [
-        "libs/eth/src/index.ts"
-      ],
       "@ngeth/contract": [
         "libs/contract/src/index.ts"
       ],
       "@ngeth/utils": [
         "libs/utils/src/index.ts"
       ],
-      "@ngeth/wallet": [
-        "libs/wallet/src/index.ts"
+      "@ngeth/auth": [
+        "libs/auth/src/index.ts"
       ]
     }
   },

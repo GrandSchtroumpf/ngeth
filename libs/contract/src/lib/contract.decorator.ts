@@ -1,6 +1,6 @@
 import { ContractModel } from '@ngeth/utils';
 import { Injectable, Type } from '@angular/core';
-import { ContractProvider } from '@ngeth/provider';
+import { ContractProvider } from './contract.provider';
 import { ABIEncoder, ABIDecoder } from './abi';
 import { ContractModule } from './contract.module';
 import { ContractClass } from './contract';

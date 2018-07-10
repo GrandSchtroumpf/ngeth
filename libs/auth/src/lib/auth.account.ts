@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { TxObject, utf8ToHex, BlockTag, toChecksumAddress } from '@ngeth/utils';
-import { MainProvider } from '@ngeth/provider/src/lib/main-provider';
-import { Auth } from '@ngeth/provider/src/lib/auth';
+import { Provider } from '@ngeth/provider';
+import { Auth } from './auth';
 import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn : 'root' })
-export class Account implements Auth {
+export class AuthAccount implements Auth {
   private currentAccount = new BehaviorSubject<string>(null);
   public account$ = this.currentAccount.asObservable();
 
-  constructor(private provider: MainProvider) {}
+  constructor(private provider: Provider) {}
 
   /** Get the default account */
   get defaultAccount(): string {

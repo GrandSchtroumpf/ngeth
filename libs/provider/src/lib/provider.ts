@@ -1,10 +1,10 @@
-import { WebsocketProvider } from '@ngeth/provider/src/lib/providers/ws-provider';
+import { WebsocketProvider } from './ws-provider';
 import { Injectable, Type } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { bindNodeCallback, Observable } from 'rxjs';
 
 import { RPCRes, RPCReq, RPCSub } from '@ngeth/utils';
-import { MainProvider } from '@ngeth/provider/src/lib/main-provider';
+import { MainProvider } from './main-provider';
 
 @Injectable({providedIn: 'root'})
 export class Provider extends MainProvider {
