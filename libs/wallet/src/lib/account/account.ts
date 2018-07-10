@@ -4,7 +4,7 @@
  */
 
 import { Injectable } from '@angular/core';
-import { WalletModule } from './../wallet.module';
+import { WalletModule } from '../wallet.module';
 
 import { v4 } from 'uuid';
 import { toChecksumAddress, keccak256 } from '@ngeth/utils';

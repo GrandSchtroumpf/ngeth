@@ -1,0 +1,41 @@
+[debug] [2018-07-05T15:23:32.386Z] ----------------------------------------------------------------------
+[debug] [2018-07-05T15:23:32.388Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\francois\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-07-05T15:23:32.388Z] CLI Version:   3.19.3
+[debug] [2018-07-05T15:23:32.388Z] Platform:      win32
+[debug] [2018-07-05T15:23:32.388Z] Node Version:  v8.9.0
+[debug] [2018-07-05T15:23:32.389Z] Time:          Thu Jul 05 2018 17:23:32 GMT+0200 (Paris, Madrid (heure d’été))
+[debug] [2018-07-05T15:23:32.389Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-05T15:23:32.399Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-05T15:23:32.400Z] > authorizing via signed-in user
+[debug] [2018-07-05T15:23:32.402Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-07-05T15:23:32.402Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/LX4cp63O0mpYx8VzcUAZh3b9jXFnnOPfl-wB9RLsAJE',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Jul 05 2018 17:23:32 GMT+0200 (Paris, Madrid (heure d’été))
+[debug] [2018-07-05T15:23:32.573Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-05T15:23:32.584Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/ngeth-demo  
+  
+ Thu Jul 05 2018 17:23:32 GMT+0200 (Paris, Madrid (heure d’été))
+[debug] [2018-07-05T15:23:33.269Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-05T15:23:33.269Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/ngeth-demo/tokens  
+  
+ Thu Jul 05 2018 17:23:33 GMT+0200 (Paris, Madrid (heure d’été))
+[debug] [2018-07-05T15:23:33.774Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-05T15:23:33.775Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/ngeth-demo  
+  
+ Thu Jul 05 2018 17:23:33 GMT+0200 (Paris, Madrid (heure d’été))
+[debug] [2018-07-05T15:23:34.608Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\programmation\B2E\@ngeth'...
+[info] 
+[debug] [2018-07-05T15:23:34.611Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/458562778646/clients/_:getWebAppConfig  
+  
+ Thu Jul 05 2018 17:23:34 GMT+0200 (Paris, Madrid (heure d’été))
+[debug] [2018-07-05T15:23:35.011Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist/apps/demos/contract
+[info] +  hosting: Local server: http://localhost:5000
+

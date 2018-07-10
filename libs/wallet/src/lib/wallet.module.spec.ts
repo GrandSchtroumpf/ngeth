@@ -1,5 +1,5 @@
 import { async, TestBed } from '@angular/core/testing';
-import { WalletModule } from './wallet.module';
+import { WalletModule } from '@ngeth/wallet/src/lib/wallet.module';
 
 describe('WalletModule', () => {
   beforeEach(

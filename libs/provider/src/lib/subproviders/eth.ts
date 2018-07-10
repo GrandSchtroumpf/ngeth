@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { numberToHex, Block, Transaction, TxReceipt, toBN } from '@ngeth/utils';
 import { ProvidersModule } from '../providers.module'
-import { MainProvider } from '../provider';
+import { MainProvider } from '../main-provider';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 

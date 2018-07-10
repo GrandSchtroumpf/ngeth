@@ -1,13 +1,13 @@
 import { BN } from 'bn.js';
 import { Injectable } from '@angular/core';
-import { ContractModule } from './../contract.module';
+import { ContractModule } from '../contract.module';
 import {
   isStatic,
   isFixedArray,
   fixedArraySize,
   paramFromArray,
   isStaticTuple,
-  isStaticArray } from './utils';
+  isStaticArray } from '../abi/utils';
 import {
   ABIOutput,
   ABIInput,

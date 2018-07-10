@@ -1,4 +1,4 @@
-import { IBlock, ITransaction, ITxReceipt, ITxLogs } from './../formatters';
+import { IBlock, ITransaction, ITxReceipt, ITxLogs } from '../formatters';
 /** JSON RPC Request model */
 export interface RPCReq {
   jsonrpc: string;

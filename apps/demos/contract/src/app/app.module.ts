@@ -12,7 +12,8 @@ import { AppProvider } from './provider';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    ProvidersModule.forRoot(AppProvider),
+    // ProvidersModule.forRoot(AppProvider),
+    ProvidersModule.init('ws://localhost:7586'),
     ContractModule,
     WalletModule,
     NxModule.forRoot()

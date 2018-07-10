@@ -1,18 +1,21 @@
+import { Account } from './subproviders/account';
 import {
   NgModule,
   ModuleWithProviders,
   InjectionToken,
+  Type,
   APP_INITIALIZER
 } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import { MainProvider } from './provider';
+import { Provider } from './provider';
 
 export const AUTH = new InjectionToken<any>('auth');
+export const URL = new InjectionToken<string>('url');
 
-export function setProviderId(provider: MainProvider) {
+export function initProvider(provider: Provider, url: string) {
   return  function() {
-    provider.fetchId().then(id => provider.id = id);
+    return provider.init(url);
   }
 }
 
@@ -21,6 +24,23 @@ export function setProviderId(provider: MainProvider) {
   imports: [HttpClientModule]
 })
 export class ProvidersModule {
+  static init(url: string, Auth?: Type<any>): ModuleWithProviders {
+    return {
+      ngModule: ProvidersModule,
+      providers: [
+        Provider,
+        { provide: URL, useValue: url },
+        {
+          provide: APP_INITIALIZER,
+          useFactory: initProvider,
+          multi: true,
+          deps: [Provider, URL]
+        },
+        { provide: AUTH, useClass: Auth || Account },
+      ]
+    };
+  };
+  /*
   static forRoot(Provider: typeof MainProvider): ModuleWithProviders {
     return {
       ngModule: ProvidersModule,
@@ -37,4 +57,5 @@ export class ProvidersModule {
       ]
     };
   }
+  */
 }

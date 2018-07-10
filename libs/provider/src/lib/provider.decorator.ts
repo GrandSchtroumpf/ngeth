@@ -4,26 +4,25 @@ import { HttpClient } from '@angular/common/http';
 import { bindNodeCallback, Observable } from 'rxjs';
 
 import { RPCRes, RPCReq, RPCSub } from '@ngeth/utils';
-import { MainProvider } from './provider';
+import { MainProvider } from './main-provider';
 import { ProvidersModule } from './providers.module';
 import { Account } from './subproviders/account';
-
 
 export function Provider(options: {
   url: string;
   auth?: any;
 }) {
+  return function(Base: typeof MainProvider) {
 
-  return function(Base: Type<MainProvider>) {
-
-    class DecoratedProvider extends MainProvider {
+    @Injectable({providedIn: ProvidersModule})
+    class DecoratedProvider extends Base {
       public static Auth = options.auth || Account;
       public sendAsync: <T>(payload: RPCReq) => Observable<RPCRes<T>>;
       public on: <T>(payload: RPCReq) => Observable<RPCSub<T>>;
 
       constructor(
-        private http: HttpClient,
-        private ws: WebsocketProvider
+        public http: HttpClient,
+        public ws: WebsocketProvider
       ) {
         super();
         this.url = options.url || 'localhost:8545';

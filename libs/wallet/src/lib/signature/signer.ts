@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TxObject, keccak256, isHexStrict, hexToBytes } from '@ngeth/utils';
-import { WalletModule } from './../wallet.module';
-import { RLP } from './rlp';
+import { WalletModule } from '../wallet.module';
+import { RLP } from '../signature/rlp';
 import { Buffer } from 'buffer';
 import { sign } from 'secp256k1';
 

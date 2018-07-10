@@ -1,63 +1,75 @@
-import { Type } from '@angular/core';
-import { RPCReq, RPCRes, RPCSub } from '@ngeth/utils';
-import { Observable } from 'rxjs';
-import { tap, map } from 'rxjs/operators';
+import { WebsocketProvider } from '@ngeth/provider/src/lib/providers/ws-provider';
+import { Injectable, Type } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { bindNodeCallback, Observable } from 'rxjs';
 
-// @dynamic
-export class MainProvider {
-  static Auth: Type<any>;
-  protected sendAsync: <T>(payload: RPCReq) => Observable<RPCRes<T>>;
-  protected on: <T>(payload: RPCReq) => Observable<RPCSub<T>>;
-  protected rpcId = 0;
-  protected web3Provider: any;
-  public url: string;
-  public id: number;
-  public type: 'web3' | 'http' | 'ws';
+import { RPCRes, RPCReq, RPCSub } from '@ngeth/utils';
+import { MainProvider } from '@ngeth/provider/src/lib/main-provider';
 
-  constructor() {}
+@Injectable({providedIn: 'root'})
+export class Provider extends MainProvider {
+  public sendAsync: <T>(payload: RPCReq) => Observable<RPCRes<T>>;
+  public on: <T>(payload: RPCReq) => Observable<RPCSub<T>>;
 
-  /** JSON RPC Request */
-  protected req(method: string, params?: any[]): RPCReq {
-    return {
-      jsonrpc: '2.0',
-      id: this.rpcId,
-      method: method,
-      params: params || []
+  constructor(
+    public http: HttpClient,
+    public ws: WebsocketProvider
+  ) {
+    super();
+  }
+
+  /**
+   * Initialize the provider with the url thenfetch the Id of the network
+   * @param url The url of the node to connect with
+   */
+  public init(url: string): Promise<number> {
+    this.url = url || 'localhost:8545';
+    const protocol = new URL(this.url).protocol;
+    const isWS = protocol === 'ws:' || protocol === 'wss:';
+
+    if (window && 'web3' in window) {
+      this.type = 'web3';
+      this.setWeb3Provider();
+    } else if (isWS) {
+      this.type = 'ws';
+      this.setWsProvider();
+    } else {
+      this.type = 'http';
+      this.setHttpProvider();
+    }
+    return this.fetchId().then(id => this.id = id);
+  }
+
+  /** Connect to a web3 instance inside the page if any */
+  private setWeb3Provider() {
+    this.web3Provider = window['web3'].currentProvider;
+    this.sendAsync = payload => {
+      const sendAsync = this.web3Provider.sendAsync.bind(
+        this.web3Provider,
+        payload
+      );
+      return bindNodeCallback<any>(sendAsync)();
     };
   }
 
-  /** JSON RPC Response */
-  protected res<T>(payload: any, result: any): RPCRes<T> {
-    return {
-      jsonrpc: payload.jsonrpc,
-      id: payload.id,
-      result: result
+  /** Setup a Websocket connection with the node */
+  private setWsProvider() {
+    this.ws.create(this.url);
+    this.on = payload => {
+      this.rpcId++;
+      return this.ws.subscribe(payload);
+    };
+    this.sendAsync = payload => {
+      this.rpcId++;
+      return this.ws.post(payload);
     };
   }
 
-  /** Get the id of the provider : use only at launch */
-  public fetchId(): Promise<number> {
-    this.rpcId++;
-    return this.rpc<number>('net_version').toPromise<number>();
-  }
-
-  /** Send a request to the node */
-  public rpc<T>(method: string, params?: any[]): Observable<T> {
-    const payload = this.req(method, params);
-    return this.sendAsync<T>(payload).pipe(
-      tap(console.log),
-      map(res => {
-        if (res.error) throw res.error;
-        return res.result;
-      })
-    );
-  }
-
-  /** Send a subscription request to the node */
-  public rpcSub<T>(params: any[]): Observable<T> {
-    const payload = this.req('eth_subscribe', params);
-    return this.on<T>(payload).pipe(
-      map(res =>  res.params.result)
-    );
+  /** Setup an HTTP connection with the node */
+  private setHttpProvider() {
+    this.sendAsync = payload => {
+      this.rpcId++;
+      return this.http.post<RPCRes<any>>(this.url, payload);
+    };
   }
 }

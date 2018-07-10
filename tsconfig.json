@@ -39,5 +39,10 @@
   "exclude": [
     "node_modules",
     "tmp"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "genDir": "./dist",
+    "skipMetadataEmit": false,
+    "skipTemplateCodegen": true
+  }
 }

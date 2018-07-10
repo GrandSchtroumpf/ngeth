@@ -1,4 +1,4 @@
-import { Contract, ContractClass } from '@ngeth/contract';
+import { Contract, ContractClass } from '@ngeth/contract/src';
 import { I<%= classify(name)%>Contract } from './<%= dasherize(name) %>.models';
 import * as abi from './<%= dasherize(name) %>.abi'
 

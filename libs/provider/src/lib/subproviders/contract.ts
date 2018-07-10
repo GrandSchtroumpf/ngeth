@@ -1,8 +1,8 @@
 import { Inject, Injectable } from '@angular/core';
 import { BlockTag, TxLogs, ITxObject, TxObject, hexToNumber, hexToNumberString } from '@ngeth/utils';
-import { ProvidersModule, AUTH } from '../providers.module';
-import { Auth } from './../auth';
-import { MainProvider } from './../provider';
+import { ProvidersModule, AUTH } from '@ngeth/provider/src/lib/providers.module';
+import { Auth } from '@ngeth/provider/src/lib/auth';
+import { MainProvider } from '@ngeth/provider/src/lib/main-provider';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 

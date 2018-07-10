@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { RPCRes, RPCSub, RPCReq } from '@ngeth/utils';
-import { ProvidersModule } from './../providers.module';
 import { w3cwebsocket } from 'websocket';
 import { WebSocketSubject } from 'rxjs/webSocket';
 
 import { Observable } from 'rxjs';
 import { filter, first, tap, switchMap, map } from 'rxjs/operators';
 
-@Injectable({ providedIn: ProvidersModule })
+@Injectable({ providedIn: 'root' })
 export class WebsocketProvider {
   private socket$: WebSocketSubject<any>;
   public observables: Observable<RPCSub>[] = [];
