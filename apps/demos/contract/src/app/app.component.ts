@@ -15,10 +15,8 @@ export class AppComponent implements OnInit {
   title = 'app';
 
   constructor(
-    // private eth: Eth,
-    // private account: Account,
     private wallet: AuthWallet,
-    // private encoderTest: EncoderTestContract,
+    private encoderTest: EncoderTestContract,
     private testEvent: TestEventContract,
   ) {}
 
@@ -42,9 +40,6 @@ export class AppComponent implements OnInit {
     this.wallet.save(account, pwd);
     this.wallet.getAccounts().subscribe(console.log);
 
-    console.log('TestEventContract', this.testEvent);
-    // console.log('CONTRACT', this.test);
-    /*
     //// EVENTS
     this.testEvent.events.IndexedEventString()
         .subscribe((event) => console.log('IndexedEventString', event));
@@ -62,13 +57,15 @@ export class AppComponent implements OnInit {
         .subscribe((event) => console.log('NormalStructEvent', event));
     this.testEvent.events.OnlyStaticStructEvent()
         .subscribe((event) => console.log('OnlyStaticStructEvent', event));
-*/
     //// CALLS
- /*
+
+    /*
     this.encoderTest.calls.getAddress('0xbEbDCB7685ab170E24215B45c81d9FFE00BBa54c')
       .subscribe(address => console.log('address', address));
     this.encoderTest.calls.getBool(true)
       .subscribe(bool => console.log('bool', bool));
+    this.encoderTest.calls.getString('Hello World')
+      .subscribe(str => console.log('string', str));
     this.encoderTest.calls.getDynamicTuple({num: 1, str: 'Hello World', dynamicBytes: '0x456789'})
       .subscribe(dynamicTuple => console.log('dynamicTuple', dynamicTuple));
     this.encoderTest.calls.getDynamicTupleArrayInsideTuple({
@@ -339,6 +336,7 @@ export class AppComponent implements OnInit {
     }]).subscribe(staticTupleArrayInsideTupleArray => {
       console.log('staticTupleArrayInsideTupleArray', staticTupleArrayInsideTupleArray);
     });
-  */
+    */
   }
+
 }

@@ -1,10 +1,10 @@
-import { Injectable, Injector, InjectionToken, Inject } from '@angular/core';
-import { ABIDefinition, toChecksumAddress, ContractModel, ITxObject } from '@ngeth/utils';
+import { Injector, InjectionToken, Inject } from '@angular/core';
+import { ABIDefinition, ContractModel, ITxObject } from '@ngeth/utils';
 import { ContractProvider } from './contract.provider';
 import { ABIEncoder, ABIDecoder } from './abi';
 
 import { Observable, forkJoin } from 'rxjs';
-import { map,  switchMap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 
 const CONFIG = new InjectionToken('@ngeth/contract : The config of a contract');
 

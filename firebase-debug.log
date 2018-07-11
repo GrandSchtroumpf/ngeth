@@ -1,0 +1,32 @@
+[debug] [2018-07-11T11:23:12.085Z] ----------------------------------------------------------------------
+[debug] [2018-07-11T11:23:12.087Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\francois\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-07-11T11:23:12.087Z] CLI Version:   3.19.3
+[debug] [2018-07-11T11:23:12.087Z] Platform:      win32
+[debug] [2018-07-11T11:23:12.087Z] Node Version:  v8.9.0
+[debug] [2018-07-11T11:23:12.088Z] Time:          Wed Jul 11 2018 13:23:12 GMT+0200 (Paris, Madrid (heure d’été))
+[debug] [2018-07-11T11:23:12.088Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-11T11:23:12.098Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-11T11:23:12.098Z] > authorizing via signed-in user
+[debug] [2018-07-11T11:23:12.101Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/ngeth-demo  
+  
+ Wed Jul 11 2018 13:23:12 GMT+0200 (Paris, Madrid (heure d’été))
+[debug] [2018-07-11T11:23:12.767Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-11T11:23:12.768Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/ngeth-demo/tokens  
+  
+ Wed Jul 11 2018 13:23:12 GMT+0200 (Paris, Madrid (heure d’été))
+[debug] [2018-07-11T11:23:13.267Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-11T11:23:13.268Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/ngeth-demo  
+  
+ Wed Jul 11 2018 13:23:13 GMT+0200 (Paris, Madrid (heure d’été))
+[debug] [2018-07-11T11:23:13.984Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\programmation\B2E\@ngeth'...
+[info] 
+[debug] [2018-07-11T11:23:13.987Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/458562778646/clients/_:getWebAppConfig  
+  
+ Wed Jul 11 2018 13:23:13 GMT+0200 (Paris, Madrid (heure d’été))
+[debug] [2018-07-11T11:23:14.339Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist/apps/demos/contract
+[info] +  hosting: Local server: http://localhost:5000
+
