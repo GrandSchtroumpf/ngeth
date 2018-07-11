@@ -37,7 +37,7 @@ export class Provider extends MainProvider {
       this.type = 'http';
       this.setHttpProvider();
     }
-    return this.fetchId().then(id => this.id = id);
+    return this.fetchId().then(id => this.id = parseInt(id, 10));
   }
 
   /** Connect to a web3 instance inside the page if any */

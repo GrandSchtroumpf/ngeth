@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { ABIInput, numberToHex, utf8ToHex, toBN, ABIDefinition, keccak256 } from '@ngeth/utils';
-import { ContractModule } from '../contract.module';
 import { isStatic, isFixedArray, paramFromArray, fixedArraySize } from './utils';
 
 export class EncodedParam {
   constructor(public head: string = '', public tail = '') {}
 }
 
-@Injectable({ providedIn: ContractModule })
+@Injectable({ providedIn: 'root' })
 export class ABIEncoder {
   constructor() {}
 

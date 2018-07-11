@@ -1,3 +1,4 @@
+import { Injectable, Injector, InjectionToken, Inject } from '@angular/core';
 import { ABIDefinition, toChecksumAddress, ContractModel, ITxObject } from '@ngeth/utils';
 import { ContractProvider } from './contract.provider';
 import { ABIEncoder, ABIDecoder } from './abi';
@@ -5,20 +6,56 @@ import { ABIEncoder, ABIDecoder } from './abi';
 import { Observable, forkJoin } from 'rxjs';
 import { map,  switchMap } from 'rxjs/operators';
 
-export class ContractClass<T extends ContractModel> {
+const CONFIG = new InjectionToken('@ngeth/contract : The config of a contract');
+
+/**
+ * TODO : Make it available with decorators
+ */
+
+/**
+ * @class The abstract class for a contract
+ */
+export class Contract<T extends ContractModel> {
+  private encoder: ABIEncoder;
+  private decoder: ABIDecoder;
+  private provider: ContractProvider;
+  private abi: ABIDefinition[];
+  public address: string;
   public calls: { [P in keyof T['calls']]: T['calls'][P]; } = {} as any;
   public sends: { [P in keyof T['sends']]: T['sends'][P]; } = {} as any;
   public events: { [P in keyof T['events']]: T['events'][P]; } = {} as any;
 
   constructor(
-    protected encoder: ABIEncoder,
-    protected decoder: ABIDecoder,
-    protected provider: ContractProvider,
-    private abi: ABIDefinition[],
-    public address?: string
+    injector: Injector,
+    @Inject(CONFIG) config
   ) {
-    if (!this.abi) { throw new Error('Please add an abi to the contract'); }
-    if (this.address) { this.address = toChecksumAddress(address); }
+    this.encoder = injector.get(ABIEncoder);
+    this.decoder = injector.get(ABIDecoder);
+    this.provider = injector.get(ContractProvider);
+    this.init(config.abi, this.getAddress(this.provider.id, config.addresses));
+  }
+
+  /**
+   * Get the address of the contract for the id network
+   * @param id The id of the network
+   * @param addresses The list of addresses for the contract
+   */
+  private getAddress(id: number, addresses): string {
+    const net = { 1: 'mainnet', 3: 'ropsten', 4: 'rinkeby', 42: 'kovan' };
+    if (!net[id]) { throw new Error(`Network ${id} is not known.`); }
+    if (!addresses[net[id]]) { throw new Error('No address provided for ' + net[id]); }
+    return addresses[net[id]];
+  }
+
+  /**
+   * Initialize the contract
+   * @param abi The Interface of the contract
+   * @param address The address of the contract for the current network
+   */
+  private init(abi: ABIDefinition[], address?: string) {
+    if (!abi) { throw new Error('Please add an abi to the contract'); }
+    this.abi = abi;
+    if (address) { this.address = address; }
     const calls: any[] = [];
     const sends: any[] = [];
     const events: any[] = [];

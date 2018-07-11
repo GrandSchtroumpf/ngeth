@@ -9,3 +9,4 @@ export * from './lib/contract.module';
 // TO Remove
 export * from './lib/abi/encoder-test/encoder-test.contract';
 export * from './lib/abi/test-event/test-event.contract';
+export * from './lib/abi/test-event/test-event.models';

@@ -1,6 +1,8 @@
-import { Contract, ContractClass } from '@ngeth/contract';
+import { Injectable, Injector } from '@angular/core';
+import { Contract } from '@ngeth/contract';
 
-@Contract({
+
+const config = {
   addresses: {
     ropsten: '0x8481cd7f87077235cd5cae0cbcbf006463ed5bd5',
     kovan: '0xebd1480fc026331557a57ad37314abf1e15e5711'
@@ -84,5 +86,10 @@ import { Contract, ContractClass } from '@ngeth/contract';
       'type': 'function'
     }
   ]
-})
-export class TestContract extends ContractClass<any> {}
+};
+@Injectable({ providedIn: 'root' })
+export class TestContract extends Contract<any> {
+  constructor(injector: Injector) {
+    super(injector, config);
+  }
+}

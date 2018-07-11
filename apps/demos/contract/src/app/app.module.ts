@@ -5,17 +5,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
 import { ProvidersModule } from '@ngeth/provider';
-import { ContractModule } from '@ngeth/contract';
-// import { AppProvider } from './provider';
+import { ContractModule, TestEventContract } from '@ngeth/contract';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    // ProvidersModule.forRoot(AppProvider),
     ProvidersModule.init('ws://localhost:7586'),
-    ContractModule.Auth(AuthWallet),
     AuthModule,
+    ContractModule.forRoot(AuthWallet),
     NxModule.forRoot()
   ],
   providers: [],

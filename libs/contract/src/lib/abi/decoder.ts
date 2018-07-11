@@ -1,6 +1,5 @@
 import { BN } from 'bn.js';
 import { Injectable } from '@angular/core';
-import { ContractModule } from '../contract.module';
 import {
   isStatic,
   isFixedArray,
@@ -21,7 +20,7 @@ export class DecodedParam {
   constructor(public result: DecodedParam, public offset: number) {}
 }
 
-@Injectable({ providedIn: ContractModule })
+@Injectable({ providedIn: 'root' })
 export class ABIDecoder {
 
   /**

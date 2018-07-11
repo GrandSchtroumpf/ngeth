@@ -4,7 +4,7 @@
     "@ngeth/contract",
     "@ngeth/provider",
     "@ngeth/utils",
-    "@ngeth/wallet"
+    "@ngeth/auth"
   ],
   "private": false,
   "npmClient": "yarn",

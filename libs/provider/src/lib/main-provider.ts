@@ -34,9 +34,9 @@ export class MainProvider {
   }
 
   /** Get the id of the provider : use only at launch */
-  public fetchId(): Promise<number> {
+  public fetchId(): Promise<string> {
     this.rpcId++;
-    return this.rpc<number>('net_version').toPromise<number>();
+    return this.rpc<string>('net_version').toPromise<string>();
   }
 
   /** Send a request to the node */
